@@ -6,8 +6,8 @@ if len(sys.argv) == 1:
     sys.exit()
     
 
-github_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
-r = requests.get(github_url)
+posten_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
+r = requests.get(posten_url)
 data = r.json()
 print "sporingsnummer " + sys.argv[1]
 for z in data['consignmentSet'][0]['packageSet'][0]['eventSet']:
