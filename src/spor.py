@@ -15,6 +15,6 @@ if 'error' in data['consignmentSet'][0]:
     print 'Fant ikke pakke'
     sys.exit()
 
-print "======== " + sys.argv[1] + " ========"
+print "======== " + sys.argv[1] + " ======== " + data['consignmentSet'][0]['packageSet'][0]['productName'] + " / " + data['consignmentSet'][0]['packageSet'][0]['brand'] + " ======="
 for z in data['consignmentSet'][0]['packageSet'][0]['eventSet']:
     print z['displayDate'] + ' ' + z['displayTime'] + ' ' + re.sub('<[^<]+?>', '', z['description']) + " (" + z['city'] + ' ' + z['country'] + ")"
