@@ -6,8 +6,8 @@ if len(sys.argv) != 2:
     sys.exit()
     
 
-github_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
-r = requests.get(github_url)
+posten_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
+r = requests.get(posten_url)
 data = r.json()
 #print data
 
