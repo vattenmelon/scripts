@@ -9,8 +9,8 @@ if len(sys.argv) != 2:
 posten_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
 try:
     r = requests.get(posten_url)
-except requests.exceptions.ConnectionError:
-    print 'Nettverksfeil'
+except requests.exceptions.ConnectionError as e:
+    print "Nettverksfeil: {0}".format(e)
     sys.exit(1)
 
 #print data
