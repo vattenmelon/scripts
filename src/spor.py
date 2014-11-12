@@ -1,14 +1,14 @@
 #!/usr/local/bin/python
 import requests, sys, re
 
+POSTEN_URL = "http://sporing.bring.no/sporing.json?q="
+
 if len(sys.argv) != 2:
     print "Oppgi ett sporingsnummer!"
     sys.exit(1)
     
-
-posten_url = "http://sporing.bring.no/sporing.json?q="+sys.argv[1]
 try:
-    r = requests.get(posten_url)
+    r = requests.get("{0}{1}".format(POSTEN_URL, sys.argv[1]))
 except requests.exceptions.ConnectionError as e:
     print "Nettverksfeil: {0}".format(e)
     sys.exit(1)
