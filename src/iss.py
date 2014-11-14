@@ -20,4 +20,4 @@ htmltext = r.text
 #print htmltext
 m = re.search('CafeN SITS Debet.*</a>.*<!--([0-9]*[.][0-9]*) -->', htmltext, re.DOTALL)
 numberAsString = m.group(1)
-print 'Kr ' + '{0:.2f}'.format(float(numberAsString))
+print 'Kr {0:.2f}'.format(float(numberAsString))
