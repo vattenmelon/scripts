@@ -18,6 +18,6 @@ FORMATTED_URL = URL + QUERYPARAMS.format(CARDNUMBER, PIN)
 r = requests.get(FORMATTED_URL)
 htmltext = r.text
 #print htmltext
-m = re.search('CafeN SITS Debet.*</a>.*<!--([0-9]*[.][0-9]*) -->', htmltext, re.DOTALL)
+m = re.search('<!--([\d]*[.][\d]*) -->', htmltext)
 numberAsString = m.group(1)
 print 'Kr {0:.2f}'.format(float(numberAsString))
