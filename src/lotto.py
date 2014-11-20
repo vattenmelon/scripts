@@ -15,4 +15,4 @@ print 'Dato         ' + date.strftime('%d. %b %Y - %H.%M.%S')
 print 'Rekke        ' + ", ".join("{0}".format(n) for n in (json['mainTable']))
 print 'Tilleggstall ' + ", ".join("{0}".format(n) for n in (json['addTable']))
 for i in range (0, len(json['prizeTable'])):
-    print '{:12s}: {:10,}'.format(json['prizeCaptionTable'][i], int(json['prizeTable'][i])).replace(',', ' ') 
+    print '{:12s}: {:10,} kr'.format(json['prizeCaptionTable'][i], int(json['prizeTable'][i])).replace(',', ' ') 
