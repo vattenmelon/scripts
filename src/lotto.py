@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-import requests, sys, json
+import requests, sys, json, locale
 from datetime import datetime
 
 URL = "https://www.norsk-tipping.no/api-lotto/getResultInfo.json"
@@ -12,7 +12,7 @@ data = data.strip()
 json = json.loads(data)
 date = datetime.strptime(json['drawDate'], '%Y,%m,%d,%H,%M,%S')
 print 'Dato         ' + date.strftime('%d. %b %Y - %H.%M.%S') 
-print 'Rekke        ' + ",".join("{0}".format(n) for n in (json['mainTable']))
-print 'Tilleggstall ' + ",".join("{0}".format(n) for n in (json['addTable']))
+print 'Rekke        ' + ", ".join("{0}".format(n) for n in (json['mainTable']))
+print 'Tilleggstall ' + ", ".join("{0}".format(n) for n in (json['addTable']))
 for i in range (0, len(json['prizeTable'])):
-    print '{:12s}: {:8d}'.format(json['prizeCaptionTable'][i], int(json['prizeTable'][i])) 
+    print '{:12s}: {:10,}'.format(json['prizeCaptionTable'][i], int(json['prizeTable'][i])).replace(',', ' ') 
