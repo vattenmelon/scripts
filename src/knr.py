@@ -1,14 +1,21 @@
 #!/usr/local/bin/python
 import requests, sys, re
+reload(sys)
+sys.setdefaultencoding('utf-8')
+param = '' 
+if (len(sys.argv) > 1 ):
+    param = sys.argv[1]
 
-if len(sys.argv) != 2:
-    print "Oppgi en kommune!"
-    sys.exit()
-
-url = "http://hotell.difi.no/api/json/ssb/regioner/kommuner?query="+sys.argv[1]
-r = requests.get(url)
-data = r.json()
-#print data
-
-for z in data['entries']:
-    print z['kode']
+side = 1
+flere = True 
+while flere:
+    url = 'http://hotell.difi.no/api/json/ssb/regioner/kommuner?query='+param+'&page='+str(side)
+    r = requests.get(url)
+    data = r.json()
+    if int(data['pages']) == 0:
+            sys.exit(0)
+    if int(data['page']) == int(data['pages']):
+        flere = False
+    side = side + 1
+    for z in data['entries']:
+        print z['kode'] + ' - ' + z['tittel']
