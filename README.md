@@ -9,3 +9,5 @@ iss.py - Script for getting balance of iss card / Skript for å finne gjenståen
 lotto.py - Script for getting Lotto numbers from Norsk Tipping / Skript for å hente lottonummer fra Norsk Tipping
 
 knr.py - Script for getting kommune number / Skript for å finne kommunenr for en kommune
+
+landkode.py - Script for getting country codes / Skript for å finne landkoder
