@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 import requests, sys, re
 reload(sys)
 sys.setdefaultencoding('utf-8')

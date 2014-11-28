@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 import requests, sys, json, locale
 from datetime import datetime
 

@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/python
 import requests, sys, re
 
 POSTEN_URL = "http://sporing.bring.no/sporing.json?q="
