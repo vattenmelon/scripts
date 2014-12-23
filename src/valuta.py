@@ -9,5 +9,7 @@ url = "http://www.freecurrencyconverterapi.com/api/v2/convert?q="+valuta+"_NOK&c
 r = requests.get(url)
 data = r.json()
 #print data
-
-print data[valuta+'_NOK']['val']
+if len(data) > 0:
+    print data[valuta+'_NOK']['val']
+else:
+    print 'fant ikke valuta'
