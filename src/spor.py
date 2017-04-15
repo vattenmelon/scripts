@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# encoding: utf-8
 import requests, sys, re
 
 POSTEN_URL = "http://sporing.bring.no/sporing.json?q="
@@ -9,7 +10,7 @@ if len(sys.argv) < 2:
 
 description = ""
 if len(sys.argv) == 3:
-    description = " - " + sys.argv[2]
+    description = " - " + unicode(sys.argv[2], 'utf-8')
    
 try:
     r = requests.get("{0}{1}".format(POSTEN_URL, sys.argv[1]))
