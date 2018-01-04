@@ -11,3 +11,5 @@ lotto.py - Script for getting Lotto numbers from Norsk Tipping / Skript for å h
 knr.py - Script for getting kommune number / Skript for å finne kommunenr for en kommune
 
 landkode.py - Script for getting country codes / Skript for å finne landkoder
+
+crypto.py - Script for getting crypto currency values / Skript for å hente kryptopenge kurser
