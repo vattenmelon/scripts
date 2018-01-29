@@ -24,12 +24,13 @@ if len(data) > 0:
         print '-----------------------------------'
         print 'algorithm:.......',x['name']
         print 'profitability:...',x['profitability'] + ' (BTC/daily)'
+        print 'profitability:...',float(x['profitability']) * float(btckurs), ' (USD/daily)'
         if 'a' in x['data'][0]:
-            print 'acceptet speed:..',x['data'][0]['a']+ ' ' + x['suffix']
+            print 'accepted speed:..',x['data'][0]['a']+ ' ' + x['suffix'] + ' <----------------------------------------- active now!'
         if 'rs' in x['data'][0]:
             print 'rejected speed:..',x['data'][0]['rs']+ ' ' + x['suffix']
-        print 'balance:.........',x['data'][1] + ' (BTC)'
-        print 'balance (USD)....',float(x['data'][1]) * float(btckurs)
+        print 'balance (BTC):...',x['data'][1] 
+        print 'balance (USD):...',float(x['data'][1]) * float(btckurs)
         total_unpaid = total_unpaid + float(x['data'][1])
     print '-----------------------------------'
     print 'total unpaid balance BTC', total_unpaid
