@@ -25,7 +25,11 @@ if 'error' in data['consignmentSet'][0]:
     print sys.argv[1] +  ' Fant ikke sporingsummer' + description
     sys.exit()
 
-print "======== " + sys.argv[1] + " ======== " + data['consignmentSet'][0]['packageSet'][0]['productName'] + " / " + data['consignmentSet'][0]['packageSet'][0]['brand'] + " =======" + description 
+brand = ''
+if data['consignmentSet'][0]['packageSet'][0]['brand'] in locals():  
+    brand = ' / ' + data['consignmentSet'][0]['packageSet'][0]['brand']
+
+print "======== " + sys.argv[1] + " ======== " + data['consignmentSet'][0]['packageSet'][0]['productName'] + " =======" + description 
 teller = len(data['consignmentSet'][0]['packageSet'][0]['eventSet']) 
 for z in data['consignmentSet'][0]['packageSet'][0]['eventSet']:
     city_text = ''
