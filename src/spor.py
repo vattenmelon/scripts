@@ -32,8 +32,11 @@ if data['consignmentSet'][0]['packageSet'][0]['brand'] in locals():
 print "======== " + sys.argv[1] + " ======== " + data['consignmentSet'][0]['packageSet'][0]['productName'] + " =======" + description 
 teller = len(data['consignmentSet'][0]['packageSet'][0]['eventSet']) 
 for z in data['consignmentSet'][0]['packageSet'][0]['eventSet']:
+    location = ''
     city_text = ''
     if z['city'] != '':
-        city_text = z['city'] + ' ' 
-    print "   " + str(teller) + " -  " +  z['displayDate'] + ' ' + z['displayTime'] + ' ' + re.sub('<[^<]+?>', '', z['description']) + " (" + city_text + z['country'] + ")"
+        city_text = z['city'] + ' '
+    if z['country'] != '':
+        location = " (" + city_text + z['country'] + ")"
+    print "   " + str(teller) + " -  " +  z['displayDate'] + ' ' + z['displayTime'] + ' ' + re.sub('<[^<]+?>', '', z['description']) + location 
     teller = teller - 1
